@@ -20,7 +20,9 @@ def create_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
-            form.save()
+            book=form.save(commit=False)
+            book.autor = request.user
+            book.save()
             return redirect('books')
     else:
         form = BookForm()

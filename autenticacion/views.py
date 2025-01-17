@@ -19,7 +19,7 @@ def user_login(request):
     return render(request, 'login.html', {'form': form})
 
 
-@login_required
+# @login_required
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
