@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 # Create your views here.
 from .models import Book
 from .forms import BookForm
+from django.db import transaction
 
 
 def home(request):
@@ -20,10 +21,11 @@ def create_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
         if form.is_valid():
-            book=form.save(commit=False)
-            book.autor = request.user
-            book.save()
-            return redirect('books')
+            with transaction.atomic():
+                book=form.save(commit=False)
+                book.autor = request.user
+                book.save()
+                return redirect('books')
     else:
         form = BookForm()
     return render(request, 'create_book.html', {'form': form})
