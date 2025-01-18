@@ -16,7 +16,8 @@ def book_list(request):
     return render(request, 'book_list.html', {'books': books})
 
 
-
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
 def create_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST)
