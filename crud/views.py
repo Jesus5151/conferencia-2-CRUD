@@ -26,6 +26,7 @@ def create_book(request):
                 book=form.save(commit=False)
                 book.autor = request.user
                 book.save()
+                pass
                 return redirect('books')
     else:
         form = BookForm()
