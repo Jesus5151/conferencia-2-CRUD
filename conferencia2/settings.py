@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-)&a$qig(!nd(f79j%cn_drzwu=dotd^$(oogibv%g%c+p+@*0x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['conferencia-2-crud-production.up.railway.app', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
