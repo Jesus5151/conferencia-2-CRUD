@@ -135,12 +135,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://conferencia-2-crud-production.up.railway.app/books/create',
+    'https://conferencia-2-crud-production.up.railway.app',
 ]
 
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 
 import logging
