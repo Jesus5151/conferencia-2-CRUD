@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-)&a$qig(!nd(f79j%cn_drzwu=dotd^$(oogibv%g%c+p+@*0x
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['conferencia-2-crud-production.up.railway.app', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['conferencia-2-crud-production.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['conferencia-2-crud-production.up.railway.app', 'localhost', '127.0.0.1', 'jesus5151.pythonanywhere.com']
 
 
 
@@ -84,11 +85,21 @@ WSGI_APPLICATION = 'conferencia2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+import dj_database_url
+import os
+# Replace it with your DATABASES.
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default="sqlite:///" + os.path.join(BASE_DIR, "db.sqlite3")
+    )
 }
 
 
