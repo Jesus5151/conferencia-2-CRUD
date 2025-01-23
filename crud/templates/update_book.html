@@ -3,14 +3,12 @@
 
 {% block content %}
 
-<h1 class="text-center mt-5">Editar libro</h1>
-<div class="col-12 col-lg-4 container-lg">
+
+<div class="col-4 mt-5 container">
 <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
-    <div class="text-center">
-    <button type="submit" class="btn btn-light">Editar</button>
-    </div>
+    <button type="submit" class="btn btn-primary">ediar</button>
     </form>
 </div>
 {%endblock %}
