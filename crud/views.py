@@ -24,7 +24,7 @@ def create_book(request):
         if form.is_valid():
             with transaction.atomic():
                 book=form.save(commit=False)
-                book.autor = request.user
+                # book.autor = request.user
                 book.save()
                 return redirect('books')
     else:
